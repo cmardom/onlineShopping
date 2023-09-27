@@ -48,4 +48,7 @@ public class Payment {
     public void setDetails(String details) {
         this.details = details;
     }
+
+
+    // dentro de order hay una lista que se llama line item con quantity y price
 }
