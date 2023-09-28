@@ -3,6 +3,7 @@ package Clases;
 import Tipos.Address;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
 
 public class Account {
     private Customer customer;
@@ -12,13 +13,22 @@ public class Account {
     private Date open;
     private Date closed;
 
-    public Account(Customer customer, String id, Address billing_address, boolean is_closed, Date open, Date closed) {
+    private LinkedHashSet<Order> orders;
+    private LinkedHashSet<Payment> payments;
+    private ShoppingCart shoppingCart;
+
+
+
+    public Account(Customer customer, String id, Address billing_address, boolean is_closed, Date open, Date closed, LinkedHashSet<Order> orders, LinkedHashSet<Payment> payments, ShoppingCart shoppingCart) {
         this.customer = customer;
         this.id = id;
         this.billing_address = billing_address;
         this.is_closed = is_closed;
         this.open = open;
         this.closed = closed;
+        this.orders = orders;
+        this.payments = payments;
+        this.shoppingCart = shoppingCart;
     }
 
     public Customer getCustomer() {
@@ -67,5 +77,29 @@ public class Account {
 
     public void setClosed(Date closed) {
         this.closed = closed;
+    }
+
+    public LinkedHashSet<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(LinkedHashSet<Order> orders) {
+        this.orders = orders;
+    }
+
+    public LinkedHashSet<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(LinkedHashSet<Payment> payments) {
+        this.payments = payments;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 }

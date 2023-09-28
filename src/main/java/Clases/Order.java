@@ -5,6 +5,7 @@ import Tipos.Enumeration.OrderStatus;
 import Tipos.Real;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
 
 public class Order {
     private Account account;
@@ -14,8 +15,9 @@ public class Order {
     private Address ship_to;
     private OrderStatus status;
     private Real total;
+    private LinkedHashSet<LineItem> lineItems;
 
-    public Order(Account account, String number, Date ordered, Date shipped, Address ship_to, OrderStatus status, Real total) {
+    public Order(Account account, String number, Date ordered, Date shipped, Address ship_to, OrderStatus status, Real total, LinkedHashSet<LineItem> lineItems) {
         this.account = account;
         this.number = number;
         this.ordered = ordered;
@@ -23,6 +25,7 @@ public class Order {
         this.ship_to = ship_to;
         this.status = status;
         this.total = total;
+        this.lineItems = lineItems;
     }
 
     public Account getAccount() {
@@ -79,5 +82,13 @@ public class Order {
 
     public void setTotal(Real total) {
         this.total = total;
+    }
+
+    public LinkedHashSet<LineItem> getLineItems() {
+        return lineItems;
+    }
+
+    public void setLineItems(LinkedHashSet<LineItem> lineItems) {
+        this.lineItems = lineItems;
     }
 }

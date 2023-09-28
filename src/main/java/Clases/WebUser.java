@@ -6,11 +6,13 @@ public class WebUser {
     private String login_id;
     private String password;
     private UserState state;
+    private ShoppingCart shoppingCart;
 
-    public WebUser(String login_id, String password, UserState state) {
+    public WebUser(String login_id, String password, UserState state, ShoppingCart shoppingCart) {
         this.login_id = login_id;
         this.password = password;
         this.state = state;
+        this.shoppingCart = shoppingCart;
     }
 
     public String getLogin_id() {
@@ -35,5 +37,13 @@ public class WebUser {
 
     public void setState(UserState state) {
         this.state = state;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 }
