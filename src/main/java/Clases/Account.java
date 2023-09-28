@@ -2,7 +2,7 @@ package Clases;
 
 import Tipos.Address;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 
 public class Account {
@@ -10,8 +10,8 @@ public class Account {
     private String id;
     private Address billing_address;
     private boolean is_closed;
-    private Date open;
-    private Date closed;
+    private LocalDateTime open;
+    private LocalDateTime closed;
 
     private LinkedHashSet<Order> orders;
     private LinkedHashSet<Payment> payments;
@@ -19,7 +19,7 @@ public class Account {
 
 
 
-    public Account(Customer customer, String id, Address billing_address, boolean is_closed, Date open, Date closed, LinkedHashSet<Order> orders, LinkedHashSet<Payment> payments, ShoppingCart shoppingCart) {
+    public Account(Customer customer, String id, Address billing_address, boolean is_closed, LocalDateTime open, LocalDateTime closed, LinkedHashSet<Order> orders, LinkedHashSet<Payment> payments, ShoppingCart shoppingCart) {
         this.customer = customer;
         this.id = id;
         this.billing_address = billing_address;
@@ -30,6 +30,15 @@ public class Account {
         this.payments = payments;
         this.shoppingCart = shoppingCart;
     }
+
+    public Account(String id, Address billing_address, boolean is_closed, LocalDateTime open, LocalDateTime closed) {
+        this.id = id;
+        this.billing_address = billing_address;
+        this.is_closed = is_closed;
+        this.open = open;
+        this.closed = closed;
+    }
+
 
     public Customer getCustomer() {
         return customer;
@@ -63,19 +72,19 @@ public class Account {
         this.is_closed = is_closed;
     }
 
-    public Date getOpen() {
+    public LocalDateTime getOpen() {
         return open;
     }
 
-    public void setOpen(Date open) {
+    public void setOpen(LocalDateTime open) {
         this.open = open;
     }
 
-    public Date getClosed() {
+    public LocalDateTime getClosed() {
         return closed;
     }
 
-    public void setClosed(Date closed) {
+    public void setClosed(LocalDateTime closed) {
         this.closed = closed;
     }
 
