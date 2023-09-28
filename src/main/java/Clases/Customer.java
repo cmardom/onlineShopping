@@ -21,6 +21,11 @@ public class Customer {
 
     }
 
+    public Customer(String id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
     public String getId() {
         return id;
     }
