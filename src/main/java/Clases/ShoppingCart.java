@@ -40,6 +40,6 @@ public class ShoppingCart {
     }
 
     public void addProductToShoppingCart(){
-
+        int i = 0;
     }
 }
