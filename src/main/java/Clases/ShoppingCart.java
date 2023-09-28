@@ -38,4 +38,8 @@ public class ShoppingCart {
     public void setLineItems(LinkedHashSet<LineItem> lineItems) {
         this.lineItems = lineItems;
     }
+
+    public void addProductToShoppingCart(){
+
+    }
 }
