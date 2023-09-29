@@ -1,8 +1,11 @@
 package Clases;
 
-import javax.sound.sampled.Line;
+import Tipos.Price;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
+import java.util.Scanner;
 
 public class ShoppingCart {
     private Account account;
@@ -12,7 +15,7 @@ public class ShoppingCart {
     public ShoppingCart(Account account, LocalDateTime created, LinkedHashSet<LineItem> lineItems) {
         this.account = account;
         this.created = created;
-        this.lineItems = lineItems;
+        this.lineItems = new LinkedHashSet<LineItem>();
     }
 
     public Account getAccount() {
@@ -39,7 +42,14 @@ public class ShoppingCart {
         this.lineItems = lineItems;
     }
 
-    public void addProductToShoppingCart(){
-        int i = 0;
+
+
+    public void addProductToShoppingCart(ShoppingCart shoppingCart){
+        // instanciar precio, producto
+        // int cantidad
+        // añadir a lineItem
+        LinkedHashSet<LineItem> lineItem= new LinkedHashSet<LineItem>();
+
+
     }
 }

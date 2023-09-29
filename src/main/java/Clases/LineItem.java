@@ -1,6 +1,7 @@
 package Clases;
 
 import Tipos.Price;
+import java.util.LinkedHashSet;
 
 public class LineItem {
     private int quantity;
@@ -28,4 +29,14 @@ public class LineItem {
     public void setPrice(Price price) {
         this.price = price;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
 }

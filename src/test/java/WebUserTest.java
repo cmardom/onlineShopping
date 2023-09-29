@@ -12,8 +12,6 @@ import Tipos.Supplier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.sound.sampled.Line;
-import javax.sound.sampled.LineEvent;
 
 public class WebUserTest {
     @Test
