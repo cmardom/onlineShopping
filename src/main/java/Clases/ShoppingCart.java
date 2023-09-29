@@ -1,6 +1,7 @@
 package Clases;
 
 import Tipos.Price;
+import Tipos.Supplier;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -44,12 +45,5 @@ public class ShoppingCart {
 
 
 
-    public void addProductToShoppingCart(ShoppingCart shoppingCart){
-        // instanciar precio, producto
-        // int cantidad
-        // añadir a lineItem
-        LinkedHashSet<LineItem> lineItem= new LinkedHashSet<LineItem>();
 
-
-    }
 }

@@ -32,16 +32,45 @@ public class WebUserTest {
         BigDecimal bdFromString = new BigDecimal("214.91");
         Price price = new Price(bdFromString);
 
-        // crear lineItem, arrayList y el linkedHashSet copiando el array list anadiendo el producot creado anteriormetne
-        LineItem lineItem = new LineItem(5, price, product);
-        ArrayList<LineItem> lineItemsArray = new ArrayList<LineItem>();
-        lineItemsArray.add(lineItem);
-        LinkedHashSet<LineItem> lineItems = new LinkedHashSet<LineItem>(lineItemsArray);
+        //se crea linkedhashset del line item
+        LineItem lineItem = new LineItem(1, price, product);
+        LinkedHashSet<LineItem> line1 = new LinkedHashSet<LineItem>();
+        //se añade a la linea
+        line1.add(lineItem);
 
-        // crear carro
-        ShoppingCart shoppingCart = new ShoppingCart(account, LocalDateTime.now(), lineItems);
-        Assertions.assertEquals(5, lineItem.getQuantity());
 
+        //se crea shoppingcart
+        ShoppingCart shoppingCart = new ShoppingCart(account, LocalDateTime.now(), line1);
+        // se añade al carro
+        shoppingCart.setLineItems(line1);
+
+        //se tesstea cantidad
+        Assertions.assertEquals(lineItem.getQuantity(), 1);
+
+
+        // LO MISMO CON PRODUCTO 2
+        Product product2 = new Product("1234", "Losa", supplier);
+        BigDecimal bdFromString2 = new BigDecimal("514.91");
+        Price price2 = new Price(bdFromString2);
+        LineItem lineItem2 = new LineItem(1, price2, product2);
+        LinkedHashSet<LineItem> line2 = new LinkedHashSet<LineItem>();
+        line2.add(lineItem);
+        shoppingCart.setLineItems(line2);
+
+        Assertions.assertEquals(lineItem2.getQuantity(), 1);
+
+
+        //LO MISMO CON PRODUCTO 3
+        Product product3 = new Product("12345", "Mosaico", supplier);
+        BigDecimal bdFromString3 = new BigDecimal("34.91");
+        Price price3 = new Price(bdFromString3);
+        LineItem lineItem3 = new LineItem(1, price3, product3);
+        LinkedHashSet<LineItem> line3 = new LinkedHashSet<LineItem>();
+        line3.add(lineItem);
+        shoppingCart.setLineItems(line3);
+
+
+        Assertions.assertEquals(lineItem3.getQuantity(), 1);
 
     }
 

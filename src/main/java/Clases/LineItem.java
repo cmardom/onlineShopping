@@ -2,6 +2,7 @@ package Clases;
 
 import Tipos.Price;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 
 public class LineItem {
     private int quantity;
@@ -38,5 +39,25 @@ public class LineItem {
         this.product = product;
     }
 
+    @Override
+    public String toString() {
+        return "LineItem{" +
+                "quantity=" + quantity +
+                ", price=" + price +
+                ", product=" + product +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LineItem lineItem = (LineItem) o;
+        return quantity == lineItem.quantity && Objects.equals(price, lineItem.price) && Objects.equals(product, lineItem.product);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(quantity, price, product);
+    }
 }
